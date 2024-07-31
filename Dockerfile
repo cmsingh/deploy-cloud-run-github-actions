@@ -4,8 +4,6 @@ FROM python:3.9-slim
 # Set the working directory
 WORKDIR /app
 
-COPY . /APP
-
 # Copy the current directory contents into the container at /app
 COPY requirements.txt .
 
@@ -20,4 +18,4 @@ COPY . .
 ENV PORT 8080
 
 # Run app.py when the container launches
-CMD ["python", "--bind", "0.0.0.0:8080", "app:app"]
+CMD ["python", "app:app"]
